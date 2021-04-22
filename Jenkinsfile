@@ -1,15 +1,14 @@
   pipeline {
 
 agent any
-    environment {
-   result=""
-   }
     stages {
 
         stage ('commit pattern check') {
             steps {
                 script {
+                  sh """
                 echo result
+                """
                 }
             }
         }    
