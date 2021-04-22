@@ -1,21 +1,13 @@
-  pipeline {
-
-agent any
-    stages {
-
-        stage ('commit pattern check') {
-            steps {
-                script {
-                  sh """
-                echo result
-                """
-                }
-            }
-        }    
-    }
-        post {
-        always {
-            cleanWs()
-        }
+pipeline { 
+  agent any 
+  stages {
+    stage('test stage'){
+      steps {
+        sh """#!/bin/bash
+            myvar=somevalue
+            echo "The value is \$myvar"
+        """
+      }
     }
   }
+}
