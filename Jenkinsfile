@@ -1,13 +1,15 @@
   pipeline {
 
 agent any
-    def result = "haii"
+    environment {
+   result=""
+   }
     stages {
 
         stage ('commit pattern check') {
             steps {
                 script {
-                echo ${result}
+                echo result
                 }
             }
         }    
